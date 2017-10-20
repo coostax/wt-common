@@ -71,4 +71,14 @@ class FileLogger{
     FileLogger::getInstance()->logger->debug($message);
   }
 
+  //redirects for Monolog functions
+
+  public pushProcessor($processor){
+    $this->logger->pushProcessor($processor);
+  }
+
+  public pushHandler($processor){
+    $this->logger->pushHandler($processor);
+  }
+
 }
