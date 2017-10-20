@@ -1,11 +1,11 @@
-#Webapp skeleton tools - Common tools collection
+#Webapp tools - Common tools collection
 
 This collection provides common utilities for the webapp skeleton project, such as site configuration singleton loader a singleton file logger and a collection of utility functions for generating content.
 
 
 ## Installation
 
-You can install this collection using composer, you can either run
+You can install this collection in your project using composer
 ```
 composer install fccn/webapptools/common
 
