@@ -73,11 +73,11 @@ class FileLogger{
 
   //redirects for Monolog functions
 
-  public pushProcessor($processor){
+  public function pushProcessor($processor){
     $this->logger->pushProcessor($processor);
   }
 
-  public pushHandler($processor){
+  public function pushHandler($processor){
     $this->logger->pushHandler($processor);
   }
 

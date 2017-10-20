@@ -38,5 +38,20 @@ class FileLoggerTest extends \Codeception\Test\Unit
     {
       $logger = \Fccn\Lib\FileLogger::getInstance();
       $logger->debug('This is a debug message');
+      $this->assertFalse(empty($logger));
+    }
+
+    public function testpushProcessor(){
+      $logger = \Fccn\Lib\FileLogger::getInstance();
+      $logger->pushProcessor(new \Monolog\Processor\UidProcessor());
+      $logger->debug('This is a debug message');
+      $this->assertFalse(empty($logger));
+    }
+
+    public function testpushHandler(){
+      $logger = \Fccn\Lib\FileLogger::getInstance();
+      $logger->pushHandler(new \Monolog\Handler\StreamHandler(\Fccn\Lib\SiteConfig::getInstance()->get('logfile_path'), \Fccn\Lib\SiteConfig::getInstance()->get('logfile_level')));
+      $logger->debug('This is a debug message');
+      $this->assertFalse(empty($logger));
     }
 }
