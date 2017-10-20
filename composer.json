@@ -1,0 +1,37 @@
+{
+    "name": "fccn/webapp-tools/common",
+    "description": "A collection of common tools to be used when developing web applications",
+    "keywords": ["fccn", "framework", "psr7"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paulo Costa",
+            "email": "paulo.costa@fccn.pt"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "monolog/monolog": "^1.17",
+        "ircmaxell/random-lib" : "dev-master"
+    },
+    "autoload":{
+      "psr-4": {
+        "Fccn\\Lib\\": "src"
+      }
+    },
+    "require-dev": {
+        "codeception/codeception": "^2.3"
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Fccn\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "process-timeout" : 0
+    },
+    "scripts": {
+        "test": "codecept run unit"
+    }
+
+}
