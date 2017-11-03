@@ -4,7 +4,7 @@ namespace Fccn\Tests;
 
 #require __DIR__ . '/../../vendor/autoload.php';
 
-define("CONFIG_FILE", dirname(__FILE__) . DIRECTORY_SEPARATOR . "../_data/config_multiple.php");
+#define("CONFIG_FILE", dirname(__FILE__) . DIRECTORY_SEPARATOR . "../_data/config_multiple.php");
 
 class SiteConfigTest extends \Codeception\Test\Unit
 {
