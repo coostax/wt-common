@@ -6,53 +6,54 @@
 
 namespace Fccn\Lib;
 
-class SiteConfig {
+class SiteConfig
+{
+    private $configs;
+    private static $instance;
 
-  private $configs;
-  private static $instance;
+    public function __construct($array = null)
+    {
+        $this->configs = $array;
+    }
 
-  public function __construct($array = null) {
-    $this->configs = $array;
-  }
+    public static function getInstance()
+    {
+        if (!SiteConfig::$instance instanceof self) {
+            if (!defined('CONFIG_FILE')) {
+                define("CONFIG_FILE", __DIR__ . "/../config.php");
+            }
 
-  public static function getInstance() {
+            //Load configuration file
+            include CONFIG_FILE;
 
-  	if (!SiteConfig::$instance instanceof self) {
-      if(!defined('CONFIG_FILE')){
-        define("CONFIG_FILE", __DIR__ . "../config.php");
-      }
+            SiteConfig::$instance = new self($c);
+        }
 
-  		//Load configuration file
-  		include CONFIG_FILE;
-
-      SiteConfig::$instance = new self($c);
-  	}
-
-  	return SiteConfig::$instance;
-  }
+        return SiteConfig::$instance;
+    }
 
 
-  public function set($key, $value) {
-    $this->configs[$key] = $value;
-  }
+    public function set($key, $value)
+    {
+        $this->configs[$key] = $value;
+    }
 
-  public function get($key) {
-    if (!isset($this->configs[$key]))
-      throw new \Exception("Unknown config variable ['$key']");
+    public function get($key)
+    {
+        if (!isset($this->configs[$key])) {
+            throw new \Exception("Unknown config variable ['$key']");
+        }
 
-    return $this->configs[$key];
-  }
+        return $this->configs[$key];
+    }
 
-  public function dump()
-  {
-    return var_export($this->configs);
-  }
+    public function dump()
+    {
+        return var_export($this->configs);
+    }
 
-  public function all()
-  {
-    return $this->configs;
-  }
-
+    public function all()
+    {
+        return $this->configs;
+    }
 }
-
-?>
