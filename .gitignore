@@ -1,3 +1,4 @@
-vendor/**
+composer.phar
+/vendor/
 tests/_data/logs/**
 .remote-sync.json
