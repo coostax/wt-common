@@ -9,7 +9,6 @@ You can install this collection in your project using composer
 composer require fccn/webapp-tools/common
 
 ```
-or add ``"fccn/webapptools/common": "dev-master"`` to your composer.yml file
 
 ## Collection components
 
@@ -95,3 +94,15 @@ No configuration is required to use the web application utilities
 ## Testing
 
 This project uses codeception for testing. To run the tests call ``composer test`` on the root of the project folder.
+
+## Contributing
+
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/fccn/wt-common/tags).
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
