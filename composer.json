@@ -1,5 +1,5 @@
 {
-    "name": "fccn/webapp-tools/common",
+    "name": "fccn/webapp-tools-common",
     "description": "A collection of common tools to be used when developing web applications",
     "keywords": ["fccn", "framework", "psr7"],
     "license": "MIT",

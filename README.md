@@ -6,7 +6,7 @@ This collection provides common utilities for the webapp skeleton project, such 
 
 You can install this collection in your project using composer
 ```
-composer require fccn/webapp-tools/common
+composer require fccn/webapp-tools-common
 
 ```
 
